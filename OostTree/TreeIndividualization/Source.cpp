@@ -129,8 +129,10 @@ std::vector<Point3D> readLasFile(std::string filePath)
 
 void main()
 {
-
+    /// The directory of the input directory;
     std::string las_dir = "path\to\input\las\files";
+
+    /// The output directory of the output tree individualization;
     std::string out_dir = "path\to\output\las\files";
 
     std::vector<std::string> las_files;
