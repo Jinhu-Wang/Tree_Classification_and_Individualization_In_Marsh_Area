@@ -10,6 +10,9 @@ Parameters:
 - *num_pts_per_cluster*: The minimum number of points per cluster;
 - *mean_height_cluster*: To filter the obtained clusters that have low elevation.
 
+
+
+
 Step 2:
 *TreeIndividualization* - the tree&shrub individualization based on the obtained tree&shrub points.
 
