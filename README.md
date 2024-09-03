@@ -11,10 +11,11 @@ Parameters:
 - *mean_height_cluster*: To filter the obtained clusters that have low elevation.
 
 Step 2:
-Run *ResultsTree* - reformulate the format of extracted trees&shrubs for quality comparison.
-
-Step 3:
-Run *QE_TreeNonTree* - evalute the accuracy of the method w.r.t. ground truths.
+Run *TreeIndividualization* - the tree&shrub individualization based on the obtained tree&shrub points.
+Parameters:
+- *radius*: The neighbourhood size used for neighbourhood searching;
+- *verticalResolution*: The vertical slicing resolution;
+- *miniPtsPerCluster*: The minimum number of points that defines a cluster.
 
 
   
