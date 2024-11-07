@@ -25,7 +25,7 @@ Parameters:
 
 
   
-# Example
+## Example
 
 ``` javascript {.line-numbers}
 
