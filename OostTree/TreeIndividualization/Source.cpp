@@ -139,14 +139,16 @@ void main()
     /// The output directory of the output tree individualization;
     std::string out_dir = "path\to\output\las\files";
 
+    /// Get all the las files in the given directory;
     std::vector<std::string> las_files;
     ListFilesInDirectory(las_dir, las_files);
 
-    // Parameters;
+    /// Parameters;
     const double radius = 2.0;
     const double verticalResolution = 0.5;
     const int miniPtsPerCluster = 10;
 
+    /// Individualize the trees from the point cloud data;
     for (size_t i = 0; i < las_files.size(); ++i)
     {
         std::vector<Point3D> treePts;

@@ -98,6 +98,8 @@ private:
     std::vector<std::vector<dPoint3D>> filterMedianHeight(std::vector<std::vector<dPoint3D>> tree_clusters);
 
 public:
+
+    /// @brief The list of las files in the input directory.
     std::vector<std::string> m_las_files;
 
 protected:

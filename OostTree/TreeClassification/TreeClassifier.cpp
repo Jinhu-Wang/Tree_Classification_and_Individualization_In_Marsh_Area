@@ -97,26 +97,19 @@ void TreeClassifier::parseEachLasFile(float radius, float min_pt, float median_h
 
         std::string outFilePath = this->m_output_tree_dir + "\\" + fileName + ".xyz";
 
-        FILE *file = fopen(outFilePath.c_str(), "w");
-        /*for (auto pt : allPts)
-        {
-            fprintf(file, "%lf %lf %lf %d\n",
-                pt.x, pt.y, pt.z, pt.class_id);
-        }*/
-
-        for (int m = 0; m < filtered_tree_clusters.size(); ++m)
-        {
-            for (int n = 0; n < filtered_tree_clusters.at(m).size(); ++n)
-            {
-                fprintf(file, "%lf %lf %lf %d\n",
-                        filtered_tree_clusters.at(m).at(n).x,
-                        filtered_tree_clusters.at(m).at(n).y,
-                        filtered_tree_clusters.at(m).at(n).z,
-                        m);
-            }
-        }
-
-        fclose(file);
+        //FILE *file = fopen(outFilePath.c_str(), "w");
+        //for (int m = 0; m < filtered_tree_clusters.size(); ++m)
+        //{
+            //for (int n = 0; n < filtered_tree_clusters.at(m).size(); ++n)
+            //{
+                //fprintf(file, "%lf %lf %lf %d\n",
+                        //filtered_tree_clusters.at(m).at(n).x,
+                        //filtered_tree_clusters.at(m).at(n).y,
+                        //filtered_tree_clusters.at(m).at(n).z,
+                        //m);
+            //}
+        //}
+        //fclose(file);
     }
 
     return;
@@ -260,23 +253,7 @@ std::vector<dPoint3D> TreeClassifier::identifyTrees(std::vector<dPoint3D> &lasPt
             pt.class_id = 0;
         }
 
-        /*double queryPt[3];
-        queryPt[0] = pt.x;
-        queryPt[1] = pt.y;
-        queryPt[2] = pt.z;
 
-        const size_t numPt = tree->radiusSearch(&queryPt[0], this->m_search_radius, pairs, params);
-
-        lasPts[i].neigh_count = numPt - 1;
-
-        if (lasPts[i].neigh_count >= this->m_num_pts_per_cluster)
-        {
-            pt.class_id = 1;
-        }
-        else
-        {
-            pt.class_id = 0;
-        }*/
         all_pts.push_back(pt);
     }
 

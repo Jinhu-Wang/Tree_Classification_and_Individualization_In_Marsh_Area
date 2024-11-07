@@ -7,8 +7,9 @@ set(${PROJECT_NAME}_HEADERS
     nanoflann.hpp
     TreeClassifier.h)
 
+
 set(${PROJECT_NAME}_SOURCES
     TreeClassifier.cpp)
 
-add_library(${PROJECT_NAME}_CLASSIFICATION STATIC ${${PROJECT_NAME}_HEADERS} ${${PROJECT_NAME}_SOURCES}) 
+add_library(${PROJECT_NAME}_CLASSIFICATION STATIC ${${PROJECT_NAME}_HEADERS} ${${PROJECT_NAME}_SOURCES})
 

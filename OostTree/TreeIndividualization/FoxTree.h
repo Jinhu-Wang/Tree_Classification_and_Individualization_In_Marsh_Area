@@ -93,7 +93,7 @@ struct BBX
 
 /**
  * @brief This class is used to individualize the trees from the point cloud data.
- *
+ * @note The class uses the nanoflann library for neighbourhood searching.
  */
 class FoxTree
 {

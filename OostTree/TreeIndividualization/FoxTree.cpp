@@ -22,7 +22,7 @@
 
 #include"FoxTree.h"
 
-FoxTree::FoxTree()
+FoxTree::FoxTree() 
 	: m_Points(nullptr)
 	, m_nNumPts(0)
 	, m_nTreeIndex(0)
@@ -33,7 +33,7 @@ FoxTree::FoxTree()
 {
 }
 
-//Default constructor;
+// Default constructor of the class;
 FoxTree::FoxTree(std::vector<Point3D> points, double radius, double verticalResolution, int minPtNum)
 {
 	this->m_nVerticalResolution = verticalResolution;
