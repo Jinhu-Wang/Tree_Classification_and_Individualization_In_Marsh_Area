@@ -27,6 +27,8 @@ Parameters:
   
 # Example
 
+``` javascript {.line-numbers}
+
 void main()
 {
     /// The directory of the input directory;
@@ -68,3 +70,6 @@ void main()
 
     return;
 }
+
+```
+
