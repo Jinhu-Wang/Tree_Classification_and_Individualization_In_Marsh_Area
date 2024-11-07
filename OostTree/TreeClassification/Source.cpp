@@ -9,6 +9,13 @@
 #define NONMIN
 #define NONMAX
 
+/**
+ * @brief The main function to classify the trees from the point cloud data in the marsh area.
+ *
+ * @param argc
+ * @param argv
+ * @return int
+ */
 int main(int argc, char **argv)
 {
 

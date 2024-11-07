@@ -127,6 +127,10 @@ std::vector<Point3D> readLasFile(std::string filePath)
     return pts;
 }
 
+/**
+ * @brief This is the main function to individualize the trees from the point cloud data.
+ *
+ */
 void main()
 {
     /// The directory of the input directory;
