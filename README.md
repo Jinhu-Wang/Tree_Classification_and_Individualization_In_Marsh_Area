@@ -2,7 +2,7 @@
 
 Extracting and individualize trees and shrubs in marsh reedbed habitat area using 3D point cloud data obtained by airborne laser scanning
 
-Module 1:
+## Module 1:
 *OostTree* - the tree&shrub segmentation algorithm to obtain points of trees&shrubs.
 
 Parameters:
@@ -14,7 +14,7 @@ Parameters:
 
 
 
-Module 2:
+## Module 2:
 *TreeIndividualization* - the tree&shrub individualization based on the obtained tree&shrub points.
 
 
