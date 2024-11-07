@@ -91,6 +91,10 @@ struct BBX
     }
 };
 
+/**
+ * @brief This class is used to individualize the trees from the point cloud data.
+ *
+ */
 class FoxTree
 {
 public:

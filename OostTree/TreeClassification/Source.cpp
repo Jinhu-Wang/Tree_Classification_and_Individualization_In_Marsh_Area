@@ -18,7 +18,6 @@
  */
 int main(int argc, char **argv)
 {
-
     std::string inputLasDir = "Input\Directory\of\Las\Files";
     std::string outputTreeDir = "Output\Directory\of\Trees";
 
