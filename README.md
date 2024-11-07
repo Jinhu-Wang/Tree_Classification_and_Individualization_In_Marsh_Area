@@ -25,3 +25,46 @@ Parameters:
 
 
   
+# Example
+
+void main()
+{
+    /// The directory of the input directory;
+    std::string las_dir = "path\to\input\las\files";
+
+    /// The output directory of the output tree individualization;
+    std::string out_dir = "path\to\output\las\files";
+
+    /// Get all the las files in the given directory;
+    std::vector<std::string> las_files;
+    ListFilesInDirectory(las_dir, las_files);
+
+    /// Parameters;
+    const double radius = 2.0;
+    const double verticalResolution = 0.5;
+    const int miniPtsPerCluster = 10;
+
+    /// Individualize the trees from the point cloud data;
+    for (size_t i = 0; i < las_files.size(); ++i)
+    {
+        std::vector<Point3D> treePts;
+
+        std::string las_file_path = las_dir + las_files[i];
+        treePts = readLasFile(las_file_path.c_str());
+
+        FoxTree *foxTree = new FoxTree(treePts, radius, verticalResolution, miniPtsPerCluster);
+
+        foxTree->separateTrees(1, 1);
+        std::string outputTree = out_dir + las_files[i] + ".xyz";
+        foxTree->outputTrees(outputTree.c_str(), foxTree->m_nTrees);
+        std::cout << "File: " << las_files[i] << " finished." << std::endl;
+
+        if (foxTree)
+        {
+            delete foxTree;
+            foxTree = nullptr;
+        }
+    }
+
+    return;
+}
