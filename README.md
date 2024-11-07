@@ -13,8 +13,10 @@ Parameters:
 
 
 
+
 Module 2:
 *TreeIndividualization* - the tree&shrub individualization based on the obtained tree&shrub points.
+
 
 Parameters:
 - *radius*: The neighbourhood size used for neighbourhood searching;
