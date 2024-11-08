@@ -42,8 +42,12 @@ void main()
     ListFilesInDirectory(las_dir, las_files);
 
     /// Parameters;
+
+    // The radius for neighbourhood searching.
     const double radius = 2.0;
+    // The vertical resolution;
     const double verticalResolution = 0.5;
+    // The minimum number of points for a cluster;
     const int miniPtsPerCluster = 10;
 
     /// Individualize the trees from the point cloud data;
