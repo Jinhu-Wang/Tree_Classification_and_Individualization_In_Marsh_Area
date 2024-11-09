@@ -52,7 +52,7 @@ This module segments the trees&shrubs points from the original AHN4 point clouds
 
 There are three parameters:
 
-```bash
+```javascript {.line-numbers}
     search_radius: The neighbourhood size for determing number of points and clustering;
     num_pts_per_cluster: The minimum number of points per cluster;
     mean_height_cluster: To filter the obtained clusters that have low elevation.
@@ -63,7 +63,7 @@ There are three parameters:
 This module performs the individual tree delineation from the segmented trees&shrubs points.
 There are three parameters:
 
-```bash
+```javascript {.line-numbers}
     radius: The neighbourhood size used for neighbourhood searching;
     verticalResolution: The vertical slicing resolution;
     miniPtsPerCluster: The minimum number of points that defines a cluster.
