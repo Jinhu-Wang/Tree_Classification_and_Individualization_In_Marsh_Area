@@ -1,6 +1,5 @@
 # Tree classification and individualization in marsh area from 3D point cloud data obtained by airborne laser scanning
 
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -13,30 +12,35 @@
 - [License](#license)
 - [Contact](#contact)
 
-## Overview 
+## Overview
+
 This repository holds the `C++` scripts and validation datasets for segmenting trees&shrubs from 3D point cloud data ([AHN4](https://www.arcgis.com/home/webscene/viewer.html?webscene=c6db29808aad459cbf6488cd96828e9a)) obtained by Airborne Laser Scanning (ALS) in marsh area of [Oostvaardersplassen](https://www.staatsbosbeheer.nl/uit-in-de-natuur/locaties/oostvaardersplassen).
 
 ### Source code
 
-
 ### Validation data
-
 
 ## File Structure
 
 ```plaintext
 project_directory/
 │
-├── data/
-│   ├── 0_json/DSM/kaartbladindex.json      # JSON file with tile information
-│   ├── 1_shpfiles/AWD_sampling_area.shp    # Shapefile with sampling area
-│   ├── 2_downloaded_geotiff/DSM/           # Directory for downloaded GeoTIFFs
-│   ├── 3_clipped/DSM/                      # Directory for clipped GeoTIFFs
-│   └── 4_merged/DSM/                       # Directory for final merged GeoTIFF
+├── data/                                   # Directory holds the manually created ground truth and validation data
+│   ├── Trees&NonTrees                      # Validation data for [trees&shrubs] segmentation
+│   │   ├── 1_GroundTruth                   # Manually created ground truth
+│   |   └── 2_Trees_NonTrees_Results        # Results from the scripts
+|   |
+│   ├── IndividualiTrees                    # Validation data for [trees&shrubs] individualization
+|   │   ├── 1_GroundTruth_Groups            # Manually created ground truth
+|   │   └── 2_IndividualizedTrees_Results   # [trees&shrubs] individualization from the scripts
 │
-└── dsm.py                                  # Main Python script
-```
+└── src                                     # Directory holds the source codes
+    ├── LASlib                              # 3rdParty LASlib
+    ├── TreeClassification                  # Scripts for trees&shrubs segmentation in marsh area
+    └── TreeIndividualization               # Scripts for trees&shrubs individualization
 
+
+```
 
 ## Module 1:
 
