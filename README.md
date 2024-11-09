@@ -1,42 +1,66 @@
 # Tree classification and individualization in marsh area from 3D point cloud data obtained by airborne laser scanning
 
-This repository holds the *C++* scripts and validation datasets for first segmenting trees&shrubs from 3D point cloud data obtained by Airborne Laser Scanning (ALS) in marsh area of [Oostvaardersplassen](https://www.staatsbosbeheer.nl/uit-in-de-natuur/locaties/oostvaardersplassen). 
+
+## Table of Contents
+
+- [Overview](#overview)
+- [File Structure](#file-structure)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage Instructions](#usage-instructions)
+- [Output Files](#output-files)
+- [Validation Data](#validation-data)
+- [License](#license)
+- [Contact](#contact)
+
+## Overview 
+This repository holds the `C++` scripts and validation datasets for segmenting trees&shrubs from 3D point cloud data ([AHN4](https://www.arcgis.com/home/webscene/viewer.html?webscene=c6db29808aad459cbf6488cd96828e9a)) obtained by Airborne Laser Scanning (ALS) in marsh area of [Oostvaardersplassen](https://www.staatsbosbeheer.nl/uit-in-de-natuur/locaties/oostvaardersplassen).
+
+### Source code
 
 
+### Validation data
 
 
+## File Structure
 
+```plaintext
+project_directory/
+│
+├── data/
+│   ├── 0_json/DSM/kaartbladindex.json      # JSON file with tile information
+│   ├── 1_shpfiles/AWD_sampling_area.shp    # Shapefile with sampling area
+│   ├── 2_downloaded_geotiff/DSM/           # Directory for downloaded GeoTIFFs
+│   ├── 3_clipped/DSM/                      # Directory for clipped GeoTIFFs
+│   └── 4_merged/DSM/                       # Directory for final merged GeoTIFF
+│
+└── dsm.py                                  # Main Python script
+```
 
-
-
-Extracting and individualize trees and shrubs in marsh reedbed habitat area using 3D point cloud data obtained by airborne laser scanning
 
 ## Module 1:
-*OostTree* - the tree&shrub segmentation algorithm to obtain points of trees&shrubs.
+
+_OostTree_ - the tree&shrub segmentation algorithm to obtain points of trees&shrubs.
 
 Parameters:
-- *search_radius*: The neighbourhood size for determing number of points and clustering;
-- *num_pts_per_cluster*: The minimum number of points per cluster;
-- *mean_height_cluster*: To filter the obtained clusters that have low elevation.
 
-
-
-
+- _search_radius_: The neighbourhood size for determing number of points and clustering;
+- _num_pts_per_cluster_: The minimum number of points per cluster;
+- _mean_height_cluster_: To filter the obtained clusters that have low elevation.
 
 ## Module 2:
-*TreeIndividualization* - the tree&shrub individualization based on the obtained tree&shrub points.
 
+_TreeIndividualization_ - the tree&shrub individualization based on the obtained tree&shrub points.
 
 Parameters:
-- *radius*: The neighbourhood size used for neighbourhood searching;
-- *verticalResolution*: The vertical slicing resolution;
-- *miniPtsPerCluster*: The minimum number of points that defines a cluster.
 
+- _radius_: The neighbourhood size used for neighbourhood searching;
+- _verticalResolution_: The vertical slicing resolution;
+- _miniPtsPerCluster_: The minimum number of points that defines a cluster.
 
-  
 ## Example
 
-``` javascript {.line-numbers}
+```javascript {.line-numbers}
 
 void main()
 {
@@ -85,4 +109,3 @@ void main()
 }
 
 ```
-
