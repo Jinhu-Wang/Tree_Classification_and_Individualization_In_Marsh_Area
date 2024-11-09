@@ -6,7 +6,6 @@
 - [File Structure](#file-structure)
 - [Requirements](#requirements)
 - [Usage Instructions](#usage-instructions)
-- [Output Files](#output-files)
 - [Validation Data](#validation-data)
 - [License](#license)
 - [Contact](#contact)
@@ -45,28 +44,30 @@ In this implementation, the scripts of **LASlib** are under directory `[LASlib]`
 
 ## Usage Instructions
 
-### Module [TreeClassification]
+### Module 1: [TreeClassification]
 
 This module segments the trees&shrubs points from the original AHN4 point clouds.
 
 There are three parameters:
 
 ```bash
-    **search_radius** The neighbourhood size for determing number of points and clustering;
-    **num_pts_per_cluster**: The minimum number of points per cluster;
-    **mean_height_cluster**: To filter the obtained clusters that have low elevation.
+    search_radius: The neighbourhood size for determing number of points and clustering;
+    num_pts_per_cluster: The minimum number of points per cluster;
+    mean_height_cluster: To filter the obtained clusters that have low elevation.
 ```
 
-### Module [TreeIndividualization]
+### Module 2: [TreeIndividualization]
 
 This module performs the individual tree delineation from the segmented trees&shrubs points.
 There are three parameters:
 
 ```bash
-    **radius**: The neighbourhood size used for neighbourhood searching;
-    **verticalResolution**: The vertical slicing resolution;
-    **miniPtsPerCluster**: The minimum number of points that defines a cluster.
+    radius: The neighbourhood size used for neighbourhood searching;
+    verticalResolution: The vertical slicing resolution;
+    miniPtsPerCluster: The minimum number of points that defines a cluster.
 ```
+
+Below shows an example on the usage of Module [TreeIndividualization]:
 
 ```javascript {.line-numbers}
 void main()
@@ -117,74 +118,42 @@ void main()
 
 ```
 
-## Module 1:
+## Validation data
 
-_OostTree_ - the tree&shrub segmentation algorithm to obtain points of trees&shrubs.
+To create the ground truth data for validating **Module [TreeClassification]**, trees and shrubs in a marsh reedbed habitat were identified manually by referring to both the original 3D point cloud data of [AHN4](https://www.ahn.nl/) and [aerial photographs](https://app.pdok.nl/viewer/#x=153872.61&y=496307.30&z=13.4935&background=BRT-A%20standaard&layers=a301ddc7-c26f-42d8-b367-509ae5ae47d0;2020_ortho25) with a resolution of 8 cm. Then, the points of trees&shrubs were manually clipped and labeled as "trees" while the rest of the points were labeled as "non-trees". A total of 20 square plots of size 50 m × 50 m were created as ground truth in Folder `\data\Trees&NonTrees\1_GroundTruth\`.
 
-Parameters:
+Similarly, the ground truth datasets for validating **Module [TreeIndividualization]** were established by manually labeling individual trees with the obtained 3D points of "trees", using the same aerial photographs as reference. A total of 20 patches of trees from the obtained "trees" in **Module [TreeClassification]**. Moreover, these 20 patches were categorized into three difficulty levels: easy, medium and hard. Those ground truth datasets are in Folder `\data\IndividualTrees\1_GroundTruth_Groups`.
 
-- _search_radius_: The neighbourhood size for determing number of points and clustering;
-- _num_pts_per_cluster_: The minimum number of points per cluster;
-- _mean_height_cluster_: To filter the obtained clusters that have low elevation.
+The original coordinate reference system was preserved during the creation of ground truth datasets. Thus, the exact geospatial locations of those plots and patches can be found directly with their own coordinates.
 
-## Module 2:
+## License
 
-_TreeIndividualization_ - the tree&shrub individualization based on the obtained tree&shrub points.
+MIT License
 
-Parameters:
+Copyright (c) 2024 Jinhu Wang
 
-- _radius_: The neighbourhood size used for neighbourhood searching;
-- _verticalResolution_: The vertical slicing resolution;
-- _miniPtsPerCluster_: The minimum number of points that defines a cluster.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Example
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-```javascript {.line-numbers}
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-void main()
-{
-    /// The directory of the input directory;
-    std::string las_dir = "path\to\input\las\files";
+## Contact
 
-    /// The output directory of the output tree individualization;
-    std::string out_dir = "path\to\output\las\files";
+For any suggestions and bug reports, please contact:
 
-    /// Get all the las files in the given directory;
-    std::vector<std::string> las_files;
-    ListFilesInDirectory(las_dir, las_files);
+Jinhu Wang
 
-    /// Parameters;
-
-    // The radius for neighbourhood searching.
-    const double radius = 2.0;
-    // The vertical resolution;
-    const double verticalResolution = 0.5;
-    // The minimum number of points for a cluster;
-    const int miniPtsPerCluster = 10;
-
-    /// Individualize the trees from the point cloud data;
-    for (size_t i = 0; i < las_files.size(); ++i)
-    {
-        std::vector<Point3D> treePts;
-
-        std::string las_file_path = las_dir + las_files[i];
-        treePts = readLasFile(las_file_path.c_str());
-
-        FoxTree *foxTree = new FoxTree(treePts, radius, verticalResolution, miniPtsPerCluster);
-
-        foxTree->separateTrees(1, 1);
-        std::string outputTree = out_dir + las_files[i] + ".xyz";
-        foxTree->outputTrees(outputTree.c_str(), foxTree->m_nTrees);
-        std::cout << "File: " << las_files[i] << " finished." << std::endl;
-
-        if (foxTree)
-        {
-            delete foxTree;
-            foxTree = nullptr;
-        }
-    }
-
-    return;
-}
-
-```
+jinhu.wang (at) hotmail (dot) com
