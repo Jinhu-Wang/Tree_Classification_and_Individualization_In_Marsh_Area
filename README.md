@@ -42,6 +42,8 @@ The `C++` scripts in this repository depends on the **[LASlib](https://conan.io/
 
 In this implementation, the scripts of **LASlib** are under directory `[LASlib]` and will be included in the C++ scripts.
 
+To use the scripts, a `C++` compiler, i.e. `g++`,`gcc`, `mscv`, `clang++`, etc., should be installed.
+
 ## Usage Instructions
 
 ### Module 1: [TreeClassification]
