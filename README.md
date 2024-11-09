@@ -1,5 +1,14 @@
 # Tree classification and individualization in marsh area from 3D point cloud data obtained by airborne laser scanning
 
+This repository holds the *C++* scripts and validation datasets for first segmenting trees&shrubs from 3D point cloud data obtained by Airborne Laser Scanning (ALS) in marsh area of [Oostvaardersplassen](https://www.staatsbosbeheer.nl/uit-in-de-natuur/locaties/oostvaardersplassen). 
+
+
+
+
+
+
+
+
 Extracting and individualize trees and shrubs in marsh reedbed habitat area using 3D point cloud data obtained by airborne laser scanning
 
 ## Module 1:
