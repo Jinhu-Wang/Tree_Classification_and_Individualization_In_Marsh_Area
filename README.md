@@ -126,7 +126,7 @@ To create the ground truth data for validating **Module [TreeClassification]**, 
 
 Similarly, the ground truth datasets for validating **Module [TreeIndividualization]** were established by manually labeling individual trees with the obtained 3D points of "trees", using the same aerial photographs as reference. A total of 20 patches of trees from the obtained "trees" in **Module [TreeClassification]**. Moreover, these 20 patches were categorized into three difficulty levels: easy, medium and hard. Those ground truth datasets are in Folder `\data\IndividualTrees\1_GroundTruth_Groups`.
 
-The original coordinate reference system was preserved during the creation of ground truth datasets. Thus, the exact geospatial locations of those plots and patches can be found directly with their own coordinates.
+**The original coordinate reference system was preserved during the creation of ground truth datasets. Thus, the exact geospatial locations of those plots and patches can be found directly with their own coordinates.**
 
 ## License
 
