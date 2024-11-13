@@ -12,7 +12,7 @@
 
 ## Overview
 
-This repository holds the scripts and validation datasets for classifying **`[trees&shrubs]`** from 3D point cloud data ([AHN4](https://www.arcgis.com/home/webscene/viewer.html?webscene=c6db29808aad459cbf6488cd96828e9a)) obtained by Airborne Laser Scanning (ALS) in marsh area of [Oostvaardersplassen](https://www.staatsbosbeheer.nl/uit-in-de-natuur/locaties/oostvaardersplassen) nature reserve.
+This repository holds the scripts and validation datasets for classifying **[trees&shrubs]** from 3D point cloud data ([AHN4](https://www.arcgis.com/home/webscene/viewer.html?webscene=c6db29808aad459cbf6488cd96828e9a)) obtained by Airborne Laser Scanning (ALS) in marsh area of [Oostvaardersplassen](https://www.staatsbosbeheer.nl/uit-in-de-natuur/locaties/oostvaardersplassen) nature reserve.
 
 ---
 
@@ -23,7 +23,7 @@ project_directory/
 │
 ├── data/                                   # Directory holds the manually created ground truth and validation data
 │   ├── Trees&NonTrees                      # Validation data for [trees&shrubs] classification results
-│   │   ├── 1_GroundTruth                   # Manually created ground truth 
+│   │   ├── 1_GroundTruth                   # Manually created ground truth
 │   |   └── 2_Trees_NonTrees_Results        # Results from the scripts
 |   |
 │   ├── IndividualiTrees                    # Validation data for [trees&shrubs] individualization
