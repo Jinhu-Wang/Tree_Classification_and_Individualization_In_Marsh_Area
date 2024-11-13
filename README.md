@@ -12,7 +12,7 @@
 
 ## Overview
 
-This repository holds the scripts and validation datasets for segmenting trees&shrubs from 3D point cloud data ([AHN4](https://www.arcgis.com/home/webscene/viewer.html?webscene=c6db29808aad459cbf6488cd96828e9a)) obtained by Airborne Laser Scanning (ALS) in marsh area of [Oostvaardersplassen](https://www.staatsbosbeheer.nl/uit-in-de-natuur/locaties/oostvaardersplassen) nature reserve.
+This repository holds the scripts and validation datasets for classifying [trees&shrubs] from 3D point cloud data ([AHN4](https://www.arcgis.com/home/webscene/viewer.html?webscene=c6db29808aad459cbf6488cd96828e9a)) obtained by Airborne Laser Scanning (ALS) in marsh area of [Oostvaardersplassen](https://www.staatsbosbeheer.nl/uit-in-de-natuur/locaties/oostvaardersplassen) nature reserve.
 
 ---
 
@@ -22,8 +22,8 @@ This repository holds the scripts and validation datasets for segmenting trees&s
 project_directory/
 │
 ├── data/                                   # Directory holds the manually created ground truth and validation data
-│   ├── Trees&NonTrees                      # Validation data for [trees&shrubs] segmentation
-│   │   ├── 1_GroundTruth                   # Manually created ground truth
+│   ├── Trees&NonTrees                      # Validation data for [trees&shrubs] classification results
+│   │   ├── 1_GroundTruth                   # Manually created ground truth 
 │   |   └── 2_Trees_NonTrees_Results        # Results from the scripts
 |   |
 │   ├── IndividualiTrees                    # Validation data for [trees&shrubs] individualization
@@ -32,7 +32,7 @@ project_directory/
 │
 └── src                                     # Directory holds the source codes
     ├── LASlib                              # 3rdParty LASlib
-    ├── TreeClassification                  # Scripts for trees&shrubs segmentation in marsh area
+    ├── TreeClassification                  # Scripts for trees&shrubs classification in marsh area
     └── TreeIndividualization               # Scripts for trees&shrubs individualization
 ```
 
@@ -48,7 +48,7 @@ To use the scripts, a `C++` compiler, i.e. `g++`,`gcc`, `mscv`, `clang++`, etc.,
 
 ### Module 1: [TreeClassification]
 
-This module segments the trees&shrubs points from the original AHN4 point clouds.
+This module classifies the original points from the original AHN4 point clouds to [trees&shrubs] and [others].
 
 There are three parameters:
 
@@ -60,7 +60,7 @@ There are three parameters:
 
 ### Module 2: [TreeIndividualization]
 
-This module performs the individual tree delineation from the segmented trees&shrubs points.
+This module performs the individual tree delineation from the classified [trees&shrubs] points.
 There are three parameters:
 
 ```
