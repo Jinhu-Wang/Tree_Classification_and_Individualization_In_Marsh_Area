@@ -22,18 +22,18 @@ This repository holds the scripts and validation datasets for classifying **[tre
 project_directory/
 │
 ├── data/                                   # Directory holds the manually created ground truth and validation data
-│   ├── Trees&NonTrees                      # Validation data for [trees&shrubs] classification results
+│   ├── Trees&NonTrees                      # Validation data for **[trees&shrubs]** classification results
 │   │   ├── 1_GroundTruth                   # Manually created ground truth
 │   |   └── 2_Trees_NonTrees_Results        # Results from the scripts
 |   |
-│   ├── IndividualiTrees                    # Validation data for [trees&shrubs] individualization
+│   ├── IndividualiTrees                    # Validation data for **[trees&shrubs]** individualization
 |   │   ├── 1_GroundTruth_Groups            # Manually created ground truth
-|   │   └── 2_IndividualizedTrees_Results   # [trees&shrubs] individualization from the scripts
+|   │   └── 2_IndividualizedTrees_Results   # **[trees&shrubs]** individualization from the scripts
 │
 └── src                                     # Directory holds the source codes
     ├── LASlib                              # 3rdParty LASlib
-    ├── TreeClassification                  # Scripts for trees&shrubs classification in marsh area
-    └── TreeIndividualization               # Scripts for trees&shrubs individualization
+    ├── TreeClassification                  # Scripts for **[trees&shrubs]** classification in marsh area
+    └── TreeIndividualization               # Scripts for **[trees&shrubs]** individualization
 ```
 
 ## Requirements
@@ -48,19 +48,19 @@ To use the scripts, a `C++` compiler, i.e. `g++`,`gcc`, `mscv`, `clang++`, etc.,
 
 ### Module 1: [TreeClassification]
 
-This module classifies the original points from the original AHN4 point clouds to [trees&shrubs] and [others].
+This module classifies the original points from the original AHN4 point clouds to **[trees&shrubs]** and **[others]**.
 
 There are three parameters:
 
 ```
-    search_radius - The neighbourhood size for determing number of points and clustering;
-    num_pts_per_cluster - The minimum number of points per cluster;
-    mean_height_cluster - To filter the obtained clusters that have low elevation.
+    search_radius: The neighbourhood size for determing number of points and clustering;
+    num_pts_per_cluster: The minimum number of points per cluster;
+    mean_height_cluster: To filter the obtained clusters that have low height.
 ```
 
 ### Module 2: [TreeIndividualization]
 
-This module performs the individual tree delineation from the classified [trees&shrubs] points.
+This module performs the individual tree delineation from the classified **[trees&shrubs]** points.
 There are three parameters:
 
 ```
@@ -122,9 +122,9 @@ void main()
 
 ## Validation data
 
-To create the ground truth data for validating **Module [TreeClassification]**, trees and shrubs in a marsh reedbed habitat were identified manually by referring to both the original 3D point cloud data of [AHN4](https://www.ahn.nl/) and [aerial photographs](https://app.pdok.nl/viewer/#x=153872.61&y=496307.30&z=13.4935&background=BRT-A%20standaard&layers=a301ddc7-c26f-42d8-b367-509ae5ae47d0;2020_ortho25) with a resolution of 8 cm. Then, the points of trees&shrubs were manually clipped and labeled as "trees" while the rest of the points were labeled as "non-trees". A total of 20 square plots of size 50 m × 50 m were created as ground truth in Folder `\data\Trees&NonTrees\1_GroundTruth\`.
+To create the ground truth data for validating **Module [TreeClassification]**, trees and shrubs in a marsh reedbed habitat were identified manually by referring to both the original 3D point cloud data of [AHN4](https://www.ahn.nl/) and [aerial photographs](https://app.pdok.nl/viewer/#x=153872.61&y=496307.30&z=13.4935&background=BRT-A%20standaard&layers=a301ddc7-c26f-42d8-b367-509ae5ae47d0;2020_ortho25) with a resolution of 8 cm. Then, the points of **[trees&shrubs]** were manually clipped and labeled as **`1`** while the rest of the points were labeled as **`0`**. A total of 20 square plots of size 50 m × 50 m were created as ground truth in Folder `\data\Trees&NonTrees\1_GroundTruth\`.
 
-Similarly, the ground truth datasets for validating **Module [TreeIndividualization]** were established by manually labeling individual trees with the obtained 3D points of "trees", using the same aerial photographs as reference. A total of 20 patches of trees from the obtained "trees" in **Module [TreeClassification]**. Moreover, these 20 patches were categorized into three difficulty levels: easy, medium and hard. Those ground truth datasets are in Folder `\data\IndividualTrees\1_GroundTruth_Groups`.
+Similarly, the ground truth datasets for validating **Module [TreeIndividualization]** were established by manually labeling individual trees with the obtained 3D points of **[trees&shrubs]**, using the same aerial photographs as reference. A total of 20 patches of trees from the obtained **[trees&shrubs]** in **Module [TreeClassification]**. Moreover, these 20 patches were categorized into three difficulty levels: easy, medium and hard. Those ground truth datasets are in Folder `\data\IndividualTrees\1_GroundTruth_Groups`.
 
 **The original coordinate reference system was preserved during the creation of ground truth datasets. Thus, the exact geospatial locations of those plots and patches can be found directly with their own coordinates.**
 
