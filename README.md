@@ -48,7 +48,7 @@ To use the scripts, a `C++` compiler, i.e. `g++`,`gcc`, `mscv`, `clang++`, etc.,
 
 ### Module 1: [TreeClassification]
 
-This module classifies the original points from the original AHN4 point clouds to **[trees&shrubs]** and **[others]**.
+This module classifies the original points from the AHN4 point clouds to **[trees&shrubs]** and **[others]** in Oostvaardersplassen marsh area.
 
 There are three parameters:
 
