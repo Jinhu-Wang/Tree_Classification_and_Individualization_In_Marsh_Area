@@ -22,18 +22,18 @@ This repository holds the scripts and validation datasets for classifying **[tre
 project_directory/
 │
 ├── data/                                   # Directory holds the manually created ground truth and validation data
-│   ├── Trees&NonTrees                      # Validation data for **[trees&shrubs]** classification results
+│   ├── Trees&NonTrees                      # Validation data for [trees&shrubs] classification results
 │   │   ├── 1_GroundTruth                   # Manually created ground truth
 │   |   └── 2_Trees_NonTrees_Results        # Results from the scripts
 |   |
-│   └── IndividualiTrees                    # Validation data for **[trees&shrubs]** individualization
+│   └── IndividualiTrees                    # Validation data for [trees&shrubs] individualization
 |       ├── 1_GroundTruth_Groups            # Manually created ground truth
-|       └── 2_IndividualizedTrees_Results   # **[trees&shrubs]** individualization from the scripts
+|       └── 2_IndividualizedTrees_Results   # [trees&shrubs] individualization from the scripts
 │
 └── src                                     # Directory holds the source codes
     ├── LASlib                              # 3rdParty LASlib
-    ├── TreeClassification                  # Scripts for **[trees&shrubs]** classification in marsh area
-    └── TreeIndividualization               # Scripts for **[trees&shrubs]** individualization
+    ├── TreeClassification                  # Scripts for [trees&shrubs] classification in marsh area
+    └── TreeIndividualization               # Scripts for [trees&shrubs] individualization
 ```
 
 ## Requirements
