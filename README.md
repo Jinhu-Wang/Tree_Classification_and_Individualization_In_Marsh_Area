@@ -28,8 +28,12 @@ project_directory/
 ├── examples/       # Two examples on classification and individualization of trees.
 |
 ├── resources/      # Typically holds the example datasets.
+|      ├── data/    # Testing data.
+|      |
+|      └── validation_data/   # Manually created ground truth.
 |
-├── trees3D/                                # Directory holds the source codes
+|
+└── trees3D/                                # Directory holds the source codes
     ├── tree_classification                 # C++ scripts of classify trees from reedbeds vegetation.
     |
     └── tree_individualization              # C++ scripts of individualize single trees.
