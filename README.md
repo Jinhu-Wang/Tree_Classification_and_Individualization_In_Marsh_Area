@@ -21,30 +21,53 @@ This repository holds the scripts and validation datasets for classifying **[tre
 ```plaintext
 project_directory/
 │
-├── data/                                   # Directory holds the manually created ground truth and validation data
-│   ├── Trees&NonTrees                      # Validation data for [trees&shrubs] classification results
-│   │   ├── 1_GroundTruth                   # Manually created ground truth
-│   |   └── 2_Trees_NonTrees_Results        # Results from the scripts
-|   |
-│   └── IndividualiTrees                    # Validation data for [trees&shrubs] individualization
-|       ├── 1_GroundTruth_Groups            # Manually created ground truth
-|       └── 2_IndividualizedTrees_Results   # [trees&shrubs] individualization from the scripts
-│
-└── src                                     # Directory holds the source codes
-    ├── LASlib                              # 3rdParty LASlib
-    ├── TreeClassification                  # Scripts for [trees&shrubs] classification in marsh area
-    └── TreeIndividualization               # Scripts for [trees&shrubs] individualization
+├── 3rd_party/      # The third party software, i.e. LAStools.
+|
+├── cmake/          # The cmake environment settings.
+|
+├── examples/       # Two examples on classification and individualization of trees.
+|
+├── resources/      # Typically holds the example datasets.
+|
+├── trees3D/                                # Directory holds the source codes
+    ├── tree_classification                 # C++ scripts of classify trees from reedbeds vegetation.
+    |
+    └── tree_individualization              # C++ scripts of individualize single trees.
+
 ```
 
 ## Requirements
 
-The `C++` scripts in this repository depends on the **[LASlib](https://conan.io/center/recipes/laslib)** to read point cloud data in **LAS/LAZ** formats.
-
-In this implementation, the scripts of **LASlib** are under directory `[LASlib]` and will be included in the C++ scripts.
+The `C++` scripts in this repository depends on the **[LAStools](https://lastools.github.io/)** to read point cloud data in **LAS/LAZ** formats.
 
 To use the scripts, a `C++` compiler, i.e. `g++`,`gcc`, `mscv`, `clang++`, etc., should be installed.
 
 ## Usage Instructions
+
+### There are three ways to build:
+
+- Option 1: Using CMake to generate makefiles and then 'make' (on Linux/macOS).
+
+  - On Linux or maxOS, simply:
+    ```
+    $ cd path-to-root-dir-of-Trees
+    $ mkdir release  && cd release
+    $ cmake -DCMAKE_BUILD_TYPE=release ..
+    $ make
+    ```
+  - On Windows with Microsoft Visual Studio, use the `x64 Native Tools Command Prompt for VS XXXX` (**don't** use the x86 one), then
+    ```
+      $ cd path-to-root-dir-of-Trees
+      $ mkdir Release
+      $ cd Release
+      $ cmake -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release ..
+      $ nmake
+    ```
+
+- Option 2: Use any IDE that can directly handle CMakeLists files to open the `CMakeLists.txt` in the **root** directory of TreesD.
+  Then you should have obtained a usable project and just build it. I recommend using
+  [CLion](https://www.jetbrains.com/clion/) or [QtCreator](https://www.qt.io/product). For Windows users: your IDE must be set for `x64`.
+- Option 3: Use CMake-Gui to generate project files for your IDE. Then load the project to your IDE and build it. For Windows users: your IDE must be set for `x64`.
 
 ### Module 1: [TreeClassification]
 

@@ -31,5 +31,33 @@
 *.out
 *.app
 
-#*.las
-#*.laz
+
+# Other intermedia files
+cmake-build-debug
+cmake-build-release
+cmake-build-minsizerel
+cmake-build-relwithdebinfo
+x64
+build 
+release 
+resources/images/img.pptx 
+.vs
+*.user
+*.log
+.DS_Store
+.idea
+.gradle
+.clangd
+.cache
+.vscode
+
+# I don't want the applications in branch [main], only in [dev]
+#applications
+
+# I don't want to push the [tests] into the repository as well.
+#tests
+
+# I don't want to push the [tutorials] into the repository as well.
+#tutorials
+
+ 
